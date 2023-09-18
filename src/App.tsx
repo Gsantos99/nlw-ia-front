@@ -1,35 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Button } from "./components/ui/button";
+import {Github} from 'lucide-react'
+import { Separator } from "@/components/ui/separator"
 
-function App() {
-  const [count, setCount] = useState(0)
+
+
+export function App() {
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="min-h-screen flex flex-col">
+      <div className="px-6 py-3 flex items-center justify-between border-b">
+        <h1 className="text-xr font-bold">Upload.ai</h1>
+        
+       <div className="flex items-center gap-3">
+        <span className="text-sm text-muted-foreground "
+        >Desenvolvido com 💚 no Nlw</span>
+        <Separator orientation='vertical' className="h-6"/>
+        <Button variant={"outline"}>
+          <Github className="w-4 h-4 mr-2"></Github>
+          Github
+          </Button>
+       </div>
+
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+     
+     <main className="flex-1 p-6 gap-6 ">
+      <div className="flex flex-col flex-1 gap-4">
+        <div className="grid grid-rows-2 gap-4 flex-1">
+
+        </div>
+        <p className="text-sm text-muted-foreground">Lembre-se: que você pode utilizar a variável <code className="text-violet-400">{'{transcription}'}</code> no seu prompt para adicionar o conteúdo da transcrição</p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      <aside className="w-80"></aside>
+     </main>
+    
+    </div>
   )
 }
 
-export default App
+
